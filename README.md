@@ -3,12 +3,25 @@ cpp-httplib
 
 [![](https://github.com/yhirose/cpp-httplib/workflows/test/badge.svg)](https://github.com/yhirose/cpp-httplib/actions)
 
-A C++11 single-file header-only cross platform HTTP/HTTPS library.
+A C++11 single-file header-only cross platform HTTP/HTTPS library, by [Yuji Hirose](https://github.com/yhirose).
 
 It's extremely easy to set up. Just include the **httplib.h** file in your code!
 
 > [!IMPORTANT]
 > This library uses 'blocking' socket I/O. If you are looking for a library with 'non-blocking' socket I/O, this is not the one that you want.
+
+Installation
+------------
+
+Run:
+```bash
+$ npm i cpp-httplib.cxx
+```
+
+And then include `httplib.h` as follows:
+```c
+#include "node_modules/cpp-httplib.cxx/httplib.h"
+```
 
 Simple examples
 ---------------
@@ -1282,3 +1295,10 @@ Special Thanks To
 -----------------
 
 [These folks](https://github.com/yhirose/cpp-httplib/graphs/contributors) made great contributions to polish this library to totally another level from a simple toy!
+
+<br>
+<br>
+
+
+[![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/cpp-httplib.cxx)
