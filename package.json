@@ -1,5 +1,5 @@
 {
-  "name": "cpp-httplib.cxx",
+  "name": "httplib.cxx",
   "version": "1.2025.11",
   "description": "A C++ header-only HTTP/HTTPS server and client library; yhirose (2012).",
   "keywords": [
@@ -11,14 +11,18 @@
     "client",
     "header-only"
   ],
-  "homepage": "https://github.com/nodef/cpp-httplib.cxx#readme",
+  "homepage": "https://github.com/nodef/httplib.cxx#readme",
   "bugs": {
-    "url": "https://github.com/nodef/cpp-httplib.cxx/issues"
+    "url": "https://github.com/nodef/httplib.cxx/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodef/cpp-httplib.cxx.git"
+    "url": "git+https://github.com/nodef/httplib.cxx.git"
   },
   "license": "MIT",
-  "main": "cpp-httplib.h"
+  "author": "wolfram77@gmail.com",
+  "main": "httplib.h",
+  "scripts": {
+    "test": "bash build.sh test"
+  }
 }
