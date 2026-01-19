@@ -31,15 +31,15 @@ int main() { /* ... */ }
 Finally, compile while adding the path `node_modules/httplib.cxx` to your compiler's include paths.
 
 ```bash
-$ clang++ -I./node_modules/httplib.cxx main.cxx  # or, use g++
-$ g++     -I./node_modules/httplib.cxx main.cxx
+$ clang++ -std=c++17 -I./node_modules/httplib.cxx main.cxx  # or, use g++
+$ g++     -std=c++17 -I./node_modules/httplib.cxx main.cxx
 ```
 
 You may also use a simpler approach with the [cpoach](https://www.npmjs.com/package/cpoach.sh) tool, which automatically adds the necessary include paths of all the installed dependencies for your project.
 
 ```bash
-$ cpoach clang++ main.cxx  # or, use g++
-$ cpoach g++     main.cxx
+$ cpoach clang++ -std=c++17 main.cxx  # or, use g++
+$ cpoach g++     -std=c++17 main.cxx
 ```
 
 Simple examples
@@ -49,7 +49,7 @@ Simple examples
 
 ```c++
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "path/to/httplib.h"
+#include <httplib.h>
 
 // HTTP
 httplib::Server svr;
@@ -68,7 +68,7 @@ svr.listen("0.0.0.0", 8080);
 
 ```c++
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "path/to/httplib.h"
+#include <httplib.h>
 
 // HTTP
 httplib::Client cli("http://yhirose.github.io");
@@ -94,7 +94,7 @@ SSL support is available with `CPPHTTPLIB_OPENSSL_SUPPORT`. `libssl` and `libcry
 
 ```c++
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "path/to/httplib.h"
+#include <httplib.h>
 
 // Server
 httplib::SSLServer svr("./cert.pem", "./key.pem");
@@ -123,7 +123,7 @@ When SSL operations fail, cpp-httplib provides detailed error information throug
 
 ```c++
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "path/to/httplib.h"
+#include <httplib.h>
 
 httplib::Client cli("https://example.com");
 
