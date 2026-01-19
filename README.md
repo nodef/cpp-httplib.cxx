@@ -1,7 +1,7 @@
 cpp-httplib
 ===========
 
-[![](https://github.com/yhirose/cpp-httplib/workflows/test/badge.svg)](https://github.com/yhirose/cpp-httplib/actions)
+<!-- [![](https://github.com/yhirose/cpp-httplib/workflows/test/badge.svg)](https://github.com/yhirose/cpp-httplib/actions) -->
 
 A C++11 single-file header-only cross platform HTTP/HTTPS library, by [Yuji Hirose](https://github.com/yhirose).
 
@@ -14,13 +14,32 @@ Installation
 ------------
 
 Run:
+
 ```bash
-$ npm i cpp-httplib.cxx
+$ npm i httplib.cxx
 ```
 
 And then include `httplib.h` as follows:
-```c
-#include "node_modules/cpp-httplib.cxx/httplib.h"
+
+```cxx
+// main.cxx
+#include <httplib.h>
+
+int main() { /* ... */ }
+```
+
+Finally, compile while adding the path `node_modules/httplib.cxx` to your compiler's include paths.
+
+```bash
+$ clang++ -I./node_modules/httplib.cxx main.cxx  # or, use g++
+$ g++     -I./node_modules/httplib.cxx main.cxx
+```
+
+You may also use a simpler approach with the [cpoach](https://www.npmjs.com/package/cpoach.sh) tool, which automatically adds the necessary include paths of all the installed dependencies for your project.
+
+```bash
+$ cpoach clang++ main.cxx  # or, use g++
+$ cpoach g++     main.cxx
 ```
 
 Simple examples
@@ -1075,7 +1094,7 @@ auto res = cli.Get("/already%20encoded/path"); // Use pre-encoded paths
 
 > [!WARNING]
 > On Windows systems with improperly configured IPv6 settings, using "localhost" as the hostname may cause significant connection delays (up to 2 seconds per request) due to DNS resolution issues. This affects both client and server operations. For better performance when connecting to local services, use "127.0.0.1" instead of "localhost".
-> 
+>
 > See: https://github.com/yhirose/cpp-httplib/issues/366#issuecomment-593004264
 
 ```cpp
@@ -1247,14 +1266,14 @@ NOTE
 
 > [!CAUTION]
 > When using complex regex patterns in route handlers, be aware that certain patterns may cause stack overflow during pattern matching. This is a known issue with `std::regex` implementations and affects the `dispatch_request()` method.
-> 
+>
 > ```cpp
 > // This pattern can cause stack overflow with large input
 > svr.Get(".*", handler);
 > ```
-> 
+>
 > Consider using simpler patterns or path parameters to avoid this issue:
-> 
+>
 > ```cpp
 > // Safer alternatives
 > svr.Get("/users/:id", handler);           // Path parameters
@@ -1300,6 +1319,7 @@ Special Thanks To
 <br>
 
 
+[![](https://raw.githubusercontent.com/qb40/designs/gh-pages/0/image/11.png)](https://wolfram77.github.io)<br>
+[![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/yhirose/cpp-httplib)
 [![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
 ![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/cpp-httplib.cxx)
-[![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/yhirose/cpp-httplib)
